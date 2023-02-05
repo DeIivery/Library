@@ -126,8 +126,12 @@ function CreateEsp(Player)
                 HealthBarOutline.Filled = true
                 HealthBarOutline.Thickness = 3.1
                 HealthBarOutline.ZIndex = 1
-    
-                HealthBar.Visible = IsVisible
+                
+                if (game.Players.LocalPlayer.Character:WaitForChild("Head").Position - Player.Character.Head.Posiiton).Magnitude < 200 then
+                    HealthBar.Visible = IsVisible
+                else 
+                    HealthBar.Visible = false
+                end
                 HealthBar.Color = Config.HealthBarColor
                 HealthBar.Thickness = 6
                 HealthBar.Filled = true
